@@ -43,10 +43,9 @@ public class Menu {
                         double deposito = scanner.nextDouble();
                         contaDeposito.depositar(deposito);
                         System.out.println("Depósito realizado com sucesso.");
-                        System.out.println("Nome: " + contaDeposito.getNome() + "\n" + "Agência: "
-                                + contaDeposito.getAgencia() + "\n" + "Conta: " + contaDeposito.getConta() + "\n"
-                                +
-                                "Saldo atual: " + contaDeposito.consultarSaldo());
+                        System.out.println(String.format("Nome: %s\nAgência: %s\nConta: %s\nSaldo atual: %s",
+                                contaDeposito.getNome(), contaDeposito.getAgencia(), contaDeposito.getConta(),
+                                contaDeposito.consultarSaldo()));
                     } else {
                         System.out.println("Conta não encontrada.");
                     }
@@ -60,10 +59,9 @@ public class Menu {
                         double saque = scanner.nextDouble();
                         contaSaque.retirar(saque);
                         System.out.println("Saque realizado com sucesso.");
-                        System.out.println("Nome: " + contaSaque.getNome() + "\n" + "Agência: "
-                                + contaSaque.getAgencia() + "\n" + "Conta: " + contaSaque.getConta() + "\n"
-                                +
-                                "Saldo atual: " + contaSaque.consultarSaldo());
+                        System.out.println(String.format("Nome: %s\nAgência: %s\nConta: %s\nSaldo atual: %s",
+                                contaSaque.getNome(), contaSaque.getAgencia(), contaSaque.getConta(),
+                                contaSaque.consultarSaldo()));
                     } else {
                         System.out.println("Conta não encontrada.");
                     }
@@ -73,11 +71,9 @@ public class Menu {
                     String numeroContaConsulta = scanner.next();
                     CadastrarConta contaConsulta = contas.get(numeroContaConsulta); // Get the Conta from the map
                     if (contaConsulta != null) {
-                        System.out.println(
-                                "Nome: " + contaConsulta.getNome() + "\n" + "Agência: " + contaConsulta.getAgencia()
-                                        + "\n"
-                                        + "Conta: " + contaConsulta.getConta() + "\n" +
-                                        "Saldo: " + contaConsulta.consultarSaldo());
+                        System.out.println(String.format("Nome: %s\nAgência: %s\nConta: %s\nSaldo atual: %s",
+                                contaConsulta.getNome(), contaConsulta.getAgencia(), contaConsulta.getConta(),
+                                contaConsulta.consultarSaldo()));
                     } else {
                         System.out.println("Conta não encontrada.");
                     }
